@@ -1,7 +1,6 @@
 import { createClient } from "contentful";
 import ComponentHeroBanner from "../components/blocks/componentHeroBanner/ComponentHeroBanner";
-import ComponentFooter from "../components/blocks/componentFooter/ComponentFooter";
-
+// import ComponentServiceCard from "../components/blocks/componentServiceCard/ComponentServiceCard";
 const { C_SPACE_ID, C_DELIVERY_KEY } = require("../helpers/contentful-config");
 
 export async function getStaticProps() {
@@ -10,27 +9,30 @@ export async function getStaticProps() {
     accessToken: C_DELIVERY_KEY,
   });
 
-  const resBanner = await client.getEntries({
-    content_type: "componentHeroBanner",
-  });
-  const resFooter = await client.getEntries({
-    content_type: "componentFooter",
-  });
+  const resPage = await client
+    .getEntries({
+      content_type: "page",
+    })
 
+    .then((entries) => entries.items);
+
+  // const resServices = await client.getEntries({
+  //   content_type: "componentServiceCard",
+  // });
   return {
     props: {
-      footer: resFooter.items[0].fields,
-      heroBanner: resBanner.items[0].fields,
+      Page: resPage,
+      heroBanner: resPage[0].fields.components[0].fields,
+      // servicesList: resServices,
     },
     revalidate: 1,
   };
 }
 
-export default function Recipes({ footer, heroBanner }) {
+export default function Recipes({ heroBanner }) {
   return (
     <div>
       <ComponentHeroBanner heroBanner={heroBanner} />
-      <ComponentFooter footer={footer} />
     </div>
   );
 }

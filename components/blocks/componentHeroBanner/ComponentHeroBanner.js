@@ -5,12 +5,12 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 
 function ComponentHeroBanner({ heroBanner }) {
-  const { description, image, logo, theme } = heroBanner;
+  const { backgroundImage, logo } = heroBanner;
   return (
     <section
-      className={`${classes.oHeroBlock} hero__${theme}`}
+      className={classes.oHeroBlock}
       style={{
-        backgroundImage: `url(http:${image.fields.file.url})`,
+        backgroundImage: `url(http:${backgroundImage.fields.file.url})`,
       }}
     >
       <div className={`container`}>
@@ -30,9 +30,6 @@ function ComponentHeroBanner({ heroBanner }) {
                 priority="true"
               />
             </figure>
-            <ReactMarkdown className={`${classes.aText} a-fnt-18f`}>
-              {description}
-            </ReactMarkdown>
           </div>
         </div>
       </div>

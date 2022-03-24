@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
 
   .oContentRow {
-    max-height: 600px;
+    min-height: 100vh;
     @include aspect-ratio(auto, 56.5%);
   }
   .oContentBlock {
