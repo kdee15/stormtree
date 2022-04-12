@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 import Component2ColumnImageText from "../components/blocks/component2ColumnImageText/Component2ColumnImageText";
 import ComponentHeroBanner from "../components/blocks/componentHeroBanner/ComponentHeroBanner";
-import Nav from "../components/molecules/nav/nav";
+import Nav from "../components/molecules/nav/Nav";
 import ComponentIntro from "../components/organisms/ComponentIntro/ComponentIntro";
 // import ComponentServiceCard from "../components/blocks/componentServiceCard/ComponentServiceCard";
 const { C_SPACE_ID, C_DELIVERY_KEY } = require("../helpers/contentful-config");
@@ -39,7 +39,7 @@ export default function Recipes({ Page }) {
   console.log("Page", Page);
   return (
     <>
-      {/* <Nav /> */}
+      <Nav />
       <ComponentHeroBanner heroBanner={heroBanner} />
       <Component2ColumnImageText contentModule={componentAbout} />
       <Component2ColumnImageText contentModule={componentTania} />
