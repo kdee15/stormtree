@@ -3,33 +3,14 @@
 
 .oHeroBlock {
   // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
-  .oContentRow {
-    min-height: 100vh;
-    @include aspect-ratio(auto, 56.5%);
-  }
-  .oContentBlock {
-    align-self: center;
-    .mImage {
-      max-width: 50%;
-      margin: 0 0 0 auto;
-    }
-    .aImage {
-      margin: 0 0 50px auto;
-      display: block;
-    }
-    .aText {
-      text-align: center;
-    }
+  .mLogo {
+    max-width: 400px;
+    margin: 25vh auto 15vh;
   }
 
-  .dog-turd {
-    p {
-      color: red !important;
-    }
+  .introImage {
+    padding: 0 50px;
   }
 
   // A. END +++++++++++++++++++++++++++++++++++++++++++++++
@@ -47,15 +28,6 @@
   // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
   @media ($sm-up) {
-    .oContentBlock {
-      .mImage {
-        max-width: 300px;
-        margin: 0 auto;
-      }
-      .aImage {
-        margin: 20px auto;
-      }
-    }
   }
 
   // C. END +++++++++++++++++++++++++++++++++++++++++++++++
