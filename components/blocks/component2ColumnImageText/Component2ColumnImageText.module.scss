@@ -5,7 +5,14 @@
 .oTextImageBlock {
   // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
 
-  padding: 50px 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+  display: flex;
+
+  &.left {
+    position: relative;
+  }
 
   &.right {
     .oBlockImage {
@@ -17,10 +24,10 @@
   }
 
   .oBlockImage {
-    .aImage {
-      display: block;
-      margin: 0 auto;
-    }
+    height: 100vh;
+    width: 55%;
+    background-size: cover;
+    background-position: center;
   }
 
   // A. END +++++++++++++++++++++++++++++++++++++++++++++++
