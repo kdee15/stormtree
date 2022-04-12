@@ -39,7 +39,7 @@ export default function Recipes({ Page }) {
   console.log("Page", Page);
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <ComponentHeroBanner heroBanner={heroBanner} />
       <Component2ColumnImageText contentModule={componentAbout} />
       <Component2ColumnImageText contentModule={componentTania} />
