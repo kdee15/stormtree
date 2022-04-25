@@ -3,6 +3,8 @@ import Component2ColumnImageText from "../components/blocks/component2ColumnImag
 import ComponentHeroBanner from "../components/blocks/componentHeroBanner/ComponentHeroBanner";
 import Nav from "../components/molecules/nav/Nav";
 import ComponentIntro from "../components/organisms/ComponentIntro/ComponentIntro";
+import FounderProfile from "../components/organisms/founderProfile/FounderProfile";
+import ServiceComponent from "../components/organisms/serviceComponent/ServiceComponent";
 // import ComponentServiceCard from "../components/blocks/componentServiceCard/ComponentServiceCard";
 const { C_SPACE_ID, C_DELIVERY_KEY } = require("../helpers/contentful-config");
 
@@ -36,14 +38,16 @@ export default function Recipes({ Page }) {
   const componentAbout = Page[0].fields.components[1].fields;
   const componentTania = Page[0].fields.components[2].fields;
   const componentAdele = Page[0].fields.components[3].fields;
+  const componentTMS = Page[0].fields.components[4].fields;
   console.log("Page", Page);
   return (
     <>
       <Nav />
       <ComponentHeroBanner heroBanner={heroBanner} />
       <Component2ColumnImageText contentModule={componentAbout} />
-      <Component2ColumnImageText contentModule={componentTania} />
-      <Component2ColumnImageText contentModule={componentAdele} />
+      <FounderProfile contentModule={componentTania} />
+      <FounderProfile contentModule={componentAdele} />
+      <ServiceComponent contentModule={componentTMS} />
     </>
   );
 }
