@@ -40,6 +40,7 @@ export default function Recipes({ Page }) {
   const componentAdele = Page[0].fields.components[3].fields;
   const componentTMS = Page[0].fields.components[4].fields;
   const componentLC = Page[0].fields.components[5].fields;
+  const componentTraining = Page[0].fields.components[6].fields;
   console.log("Page", Page);
   return (
     <>
@@ -50,6 +51,7 @@ export default function Recipes({ Page }) {
       <FounderProfile contentModule={componentAdele} />
       <ServiceComponent contentModule={componentTMS} />
       <ServiceComponent contentModule={componentLC} />
+      <ServiceComponent contentModule={componentTraining} />
     </>
   );
 }
