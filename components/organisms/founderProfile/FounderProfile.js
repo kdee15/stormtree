@@ -6,7 +6,9 @@ function FounderProfile({ contentModule }) {
   const { title, copy, image, subtitle, imagePosition } = contentModule;
   return (
     <section
-      className={`${classes.oTextImageBlock} ${classes[`${imagePosition}`]}`}
+      className={`${classes.oFounderProfileBlock} ${
+        classes[`${imagePosition}`]
+      }`}
     >
       <div className={`container`}>
         <div className={`row`}>

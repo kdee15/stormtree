@@ -2,34 +2,25 @@
 
 @import "scss/.base/module-index";
 
-.oTextImageBlock {
+.oFounderProfileBlock {
   // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
-
   padding: 0;
   position: relative;
 
-  &.left {
-    position: relative;
-  }
-
-  &.right {
-    .oBlockImage {
-      order: 2;
-    }
-    .oBlockBody {
-      order: 1;
-    }
+  .aBlockTitle {
+    margin-bottom: 15px;
   }
 
   .oBlockImage {
+    width: 100%;
+    height: 50vh;
     background-size: cover;
     background-position: center;
-    .imageRatio {
-      @include aspect-ratio(100%, 120%);
-    }
   }
 
   .oBlockBody {
+    width: 100%;
+    padding: 30px 45px;
   }
 
   // A. END +++++++++++++++++++++++++++++++++++++++++++++++
@@ -47,13 +38,34 @@
   // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
   @media ($sm-up) {
-    .oBlockBody {
-      padding-left: 12%;
-      align-self: center;
+    height: 100vh;
+    display: flex;
+
+    &.left {
+      position: relative;
     }
+
+    &.right {
+      .oBlockImage {
+        order: 2;
+      }
+      .oBlockBody {
+        order: 1;
+      }
+    }
+
     .oBlockImage {
       align-self: center;
       margin-bottom: 0;
+      height: 100vh;
+      width: 55%;
+      flex: 1 1 55%;
+    }
+
+    .oBlockBody {
+      flex: 1 1 45%;
+      padding-left: 12%;
+      align-self: center;
     }
 
     &.right {
