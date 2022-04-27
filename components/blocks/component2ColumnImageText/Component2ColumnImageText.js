@@ -8,16 +8,16 @@ function Component2ColumnImageText({ contentModule }) {
     <section
       className={`${classes.oTextImageBlock} ${classes[`${imagePosition}`]}`}
     >
+      <div className={`${classes.oBlockBody}`}>
+        <h2 className={classes.aBlockTitle}>{title}</h2>
+        <div>{documentToReactComponents(copy)}</div>
+      </div>
       <figure
         className={`${classes.oBlockImage}`}
         style={{
           backgroundImage: `url(http:${image.fields.file.url})`,
         }}
       ></figure>
-      <div className={`${classes.oBlockBody}`}>
-        <h2 className={classes.aBlockTitle}>{title}</h2>
-        <div>{documentToReactComponents(copy)}</div>
-      </div>
     </section>
   );
 }
