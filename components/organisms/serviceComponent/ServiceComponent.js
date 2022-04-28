@@ -6,18 +6,18 @@ function ServiceComponent({ contentModule }) {
   const { title, copy, image, subtitle, imagePosition } = contentModule;
   return (
     <section
-      className={`${classes.oTextImageBlock} ${classes[`${imagePosition}`]}`}
+      className={`${classes.oServiceBlock} ${classes[`${imagePosition}`]}`}
     >
-      <figure
+      <div
         className={`${classes.oBlockImage}`}
         style={{
           backgroundImage: `url(http:${image.fields.file.url})`,
         }}
       >
         <h2 className={classes.aBlockTitle}>{title}</h2>
-      </figure>
+      </div>
       <div className={`${classes.oBlockBody}`}>
-        <div>{documentToReactComponents(copy)}</div>
+        {documentToReactComponents(copy)}
       </div>
     </section>
   );

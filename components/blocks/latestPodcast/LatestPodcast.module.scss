@@ -59,14 +59,11 @@
 @media ($md-dn) {
 }
 
-@media ($sm-dn) {
-}
-
 // B. END +++++++++++++++++++++++++++++++++++++++++++++++
 
 // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
-@media ($sm-up) {
+@media ($md-up) {
   .oLatestPodcastBlock {
     .oColPodcasts {
       padding-top: 0;
@@ -103,7 +100,7 @@
 
 // D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++
 
-@media ($md-up) {
+@media ($lg-up) {
   .oLatestPodcastBlock {
     .oColPodcasts {
       align-self: center;
@@ -121,7 +118,7 @@
 
 // E. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++
 
-@media ($lg-up) {
+@media ($xl-up) {
 }
 
 // E. END +++++++++++++++++++++++++++++++++++++++++++++++
