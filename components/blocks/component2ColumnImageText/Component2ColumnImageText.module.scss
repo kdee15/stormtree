@@ -46,14 +46,11 @@
   @media ($md-dn) {
   }
 
-  @media ($sm-dn) {
-  }
-
   // B. END +++++++++++++++++++++++++++++++++++++++++++++++
 
   // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
-  @media ($sm-up) {
+  @media ($md-up) {
     height: 100vh;
     display: flex;
 

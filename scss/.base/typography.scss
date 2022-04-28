@@ -2,469 +2,358 @@
 
 // A. FONT SOURCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&display=swap");
 
-$font: 'Nunito', sans-serif;
+$font: "Nunito", sans-serif;
+$alex: "Alex Brush", cursive;
+$cormorant: "Cormorant", serif;
 
-// A.2. RESPONSIVE FONTS ----------------------------------
-
+// A.2. RESPONSIVE FONT VARIABLES -------------------------
 // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
 
-$view-min-xs: 376;
-$view-max-xs: 767;
-
-$view-min-sm: 768;
-$view-max-sm: 991;
-
-$view-min-md: 992;
-$view-max-md: 1920;
-
-// H1
-$h1-min-xs: 40;
-$h1-max-xs: 50;
-$h1-min-sm: 55;
-$h1-max-sm: 55;
-$h1-min-md: 57;
-$h1-max-md: 58;
-$h1-max: 60;
-
-// H2
-$h2-min-xs: 40;
-$h2-max-xs: 42;
-$h2-min-sm: 43;
-$h2-max-sm: 44;
-$h2-min-md: 45;
-$h2-max-md: 45;
-$h2-max: 45;
-
-// H3
-$h3-min-xs: 25;
-$h3-max-xs: 25;
-$h3-min-sm: 25;
-$h3-max-sm: 25;
-$h3-min-md: 25;
-$h3-max-md: 25;
-$h3-max: 25;
-
-// H4
-$h4-min-xs: 21;
-$h4-max-xs: 21;
-$h4-min-sm: 22;
-$h4-max-sm: 22;
-$h4-min-md: 22;
-$h4-max-md: 22;
-$h4-max: 22;
+$view-min-xs: 320;
+$view-max-md: 1400;
 
 // A.2. END -----------------------------------------------
 
 // A.3. TYPOGRAPHY STYING ---------------------------------
-
 // A.3.1. QUICK RESPONSIVE FONTS --------------------------
 
-// 36px fixed ---------------
+// H1 -----------------------
+$h1-min-xs: 32; // minimum font size at smallest screen size
+$h1-max-md: 46; // maximum font size at largest screen size
+$h1-max: 46; // failsafe for larger screens
 
-.a-fnt-36f,
-.a-fnt-36f * {
-  font-size: 36px;
-  line-height: 47px;
-}
-
-// END: 36px fixed ----------
-
-// 36px to 18px -------------
-$fnt36-min-xs: 30; // minimum font size at smallest screen size
-$fnt36-max-md: 36; // maximum font size at largest screen size
-$fnt36-max: 36; // failsafe for larger screens
-
-$fnt36-minLH-xs: 40; // minimum line height at smallest screen size
-$fnt36-maxLH-md: 46; // maximum line height at largest screen size
-$fnt36-maxLH: 46; // failsafe for larger screens
-
-.a-fnt-36,
-.a-fnt-36 * {
-  font-size: calc(
-          #{$fnt36-min-xs}px + (#{$fnt36-max-md} - #{$fnt36-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-          #{$fnt36-minLH-xs}px + (#{$fnt36-maxLH-md} - #{$fnt36-minLH-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-
-// END: 36px to 18px --------
-
-// 32px to 18px -------------
-$fnt32-min-xs: 18; // minimum font size at smallest screen size
-$fnt32-max-md: 32; // maximum font size at largest screen size
-$fnt32-max: 32; // failsafe for larger screens
-
-$fnt32-minLH-xs: 24; // minimum line height at smallest screen size
-$fnt32-maxLH-md: 38; // maximum line height at largest screen size
-$fnt32-maxLH: 38; // failsafe for larger screens
-
-.a-fnt-32,
-.a-fnt-32 * {
-  font-size: calc(
-          #{$fnt32-min-xs}px + (#{$fnt32-max-md} - #{$fnt32-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-          #{$fnt32-minLH-xs}px + (#{$fnt32-maxLH-md} - #{$fnt32-minLH-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-
-// END: 32px to 18px --------
-
-// 32px to 24px -------------
-$fnt32L-min-xs: 24; // minimum font size at smallest screen size
-$fnt32L-max-md: 32; // maximum font size at largest screen size
-$fnt32L-max: 32; // failsafe for larger screens
-
-$fnt32L-minLH-xs: 28; // minimum line height at smallest screen size
-$fnt32L-maxLH-md: 38; // maximum line height at largest screen size
-$fnt32L-maxLH: 38; // failsafe for larger screens
-
-.a-fnt-32l,
-.a-fnt-32l * {
-  font-size: calc(
-          #{$fnt32L-min-xs}px + (#{$fnt32L-max-md} - #{$fnt32L-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-          #{$fnt32L-minLH-xs}px + (#{$fnt32L-maxLH-md} - #{$fnt32L-minLH-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-
-// END: 32px to 24px --------
-
-// 28px fixed ---------------
-
-.a-fnt-28f,
-.a-fnt-28f * {
-  font-size: 28px;
-  line-height: 36.5px;
-}
-
-// END: 28px fixed ----------
-
-// 24px fixed ---------------
-
-.a-fnt-24f,
-.a-fnt-24f * {
-  font-size: 24px;
-  line-height: 31.5px;
-}
-
-// END: 24px fixed ----------
-
-// 20px fixed ---------------
-
-.a-fnt-20f,
-.a-fnt-20f * {
-  font-size: 20px;
-  line-height: 23.5px;
-}
-
-// END: 20px fixed ----------
-
-// 20px to 15px -------------
-$fnt20-min-xs: 15; // minimum font size at smallest screen size
-$fnt20-max-md: 20; // maximum font size at largest screen size
-$fnt20-max: 20; // failsafe for larger screens
-
-$fnt20-minLH-xs: 16; // minimum line height at smallest screen size
-$fnt20-maxLH-md: 24; // maximum line height at largest screen size
-$fnt20-maxLH: 24; // failsafe for larger screens
-
-.a-fnt-20,
-.a-fnt-20 * {
-  font-size: calc(
-          #{$fnt20-min-xs}px + (#{$fnt20-max-md} - #{$fnt20-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-          #{$fnt20-minLH-xs}px + (#{$fnt20-maxLH-md} - #{$fnt20-minLH-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-
-// END: Body Font -----------
-
-// 18px fixed ---------------
-
-.a-fnt-18f,
-.a-fnt-18f * {
-  font-size: 18px;
-  line-height: 26px;
-}
-
-// END: 18px fixed ----------
-
-// 17px fixed ---------------
-
-.a-fnt-17f,
-.a-fnt-17f * {
-  font-size: 17px;
-  line-height: 36.5px;
-}
-
-// END: 17px fixed ----------
-
-// Body Font ----------------
-$fnt16-min-xs: 14; // minimum font size at smallest screen size
-$fnt16-max-md: 16; // maximum font size at largest screen size
-$fnt16-max: 16; // failsafe for larger screens
-
-$fnt16-minLH-xs: 18; // minimum line height at smallest screen size
-$fnt16-maxLH-md: 21; // maximum line height at largest screen size
-$fnt16-maxLH: 21; // failsafe for larger screens
-
-.a-fnt-16,
-.a-fnt-16 * {
-  font-size: calc(
-          #{$fnt16-min-xs}px + (#{$fnt16-max-md} - #{$fnt16-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-          #{$fnt16-minLH-xs}px + (#{$fnt16-maxLH-md} - #{$fnt16-minLH-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-
-// END: Body Font -----------
-
-// 16px fixed ---------------
-$fnt16f-min-xs: 16; // minimum font size at smallest screen size
-$fnt16f-max-md: 16; // maximum font size at largest screen size
-$fnt16f-max: 16; // failsafe for larger screens
-
-$fnt16f-minLH-xs: 22; // minimum line height at smallest screen size
-$fnt16f-maxLH-md: 24; // maximum line height at largest screen size
-$fnt16f-maxLH: 24; // failsafe for larger screens
-
-p, p *, .a-fnt-16f, .a-fnt-16f * {
-  font-size: calc( #{$fnt16f-min-xs}px + (#{$fnt16f-max-md} - #{$fnt16f-min-xs}) * ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs})));
-  line-height: calc(#{$fnt16f-minLH-xs}px + (#{$fnt16f-maxLH-md} - #{$fnt16f-minLH-xs}) * ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs})));
-}
-
-// END: 16px fixed ----------
-
-// 16px small ---------------
-$fnt16s-min-xs: 13; // minimum font size at smallest screen size
-$fnt16s-max-md: 16; // maximum font size at largest screen size
-$fnt16s-max: 16; // failsafe for larger screens
-
-$fnt16s-minLH-xs: 17; // minimum line height at smallest screen size
-$fnt16s-maxLH-md: 21; // maximum line height at largest screen size
-$fnt16s-maxLH: 21; // failsafe for larger screens
-
-.a-fnt-16s,
-.a-fnt-16s * {
-  font-size: calc(
-          #{$fnt16s-min-xs}px + (#{$fnt16s-max-md} - #{$fnt16s-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-          #{$fnt16s-minLH-xs}px + (#{$fnt16s-maxLH-md} - #{$fnt16s-minLH-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-
-// END: 16px small ----------
-
-// 15px fixed ---------------
-
-.a-fnt-15f,
-.a-fnt-15f * {
-  font-size: 15px;
-  line-height: 19px;
-}
-
-// END: 20px fixed ----------
-
-// A.3.1. END ---------------------------------------------
+$h1-minLH-xs: 36; // minimum line height at smallest screen size
+$h1-maxLH-md: 52; // maximum line height at largest screen size
+$h1-maxLH: 52; // failsafe for larger screens
 
 h1,
-.a-h1 {
+.fntH1 {
   font-size: calc(
-          #{$h1-min-xs}px + (#{$h1-max-xs} - #{$h1-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs}))
+    #{$h1-min-xs}px + (#{$h1-max-md} - #{$h1-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$h1-minLH-xs}px + (#{$h1-maxLH-md} - #{$h1-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
   );
 }
+// END: H1 ------------------
+
+// H2 -----------------------
+$h2-min-xs: 28;
+$h2-max-md: 52;
+$h2-max: 52;
+
+$h2-minLH-xs: 30;
+$h2-maxLH-md: 56;
+$h2-maxLH: 56;
 
 h2,
-.a-h2 {
+.fntH2 {
   font-size: calc(
-          #{$h2-min-xs}px + (#{$h2-max-xs} - #{$h2-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs}))
+    #{$h2-min-xs}px + (#{$h2-max-md} - #{$h2-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$h2-minLH-xs}px + (#{$h2-maxLH-md} - #{$h2-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
   );
 }
+// END: H2 ------------------
 
-h3,
-.a-h3 {
-  font-size: calc(
-          #{$h3-min-xs}px + (#{$h3-max-xs} - #{$h3-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs}))
-  );
+// 25px fixed ---------------
+.fnt30f,
+.fnt30f * {
+  font-size: 30px;
+  line-height: normal;
 }
+// END: 25px fixed ----------
 
-h4,
-.a-h4 {
+// 25px fixed ---------------
+.fnt25f,
+.fnt25f * {
+  font-size: 25px;
+  line-height: normal;
+}
+// END: 25px fixed ----------
+
+// 25px fixed ---------------
+.fnt24f,
+.fnt24f * {
+  font-size: 24px;
+  line-height: normal;
+}
+// END: 25px fixed ----------
+
+// 24px - 16px --------------
+$f24-min-xs: 16;
+$f24-max-md: 24;
+$f24-max: 24;
+
+$f24-minLH-xs: 22;
+$f24-maxLH-md: 28;
+$f24-maxLH: 28;
+
+.fnt24,
+.fnt24 * {
   font-size: calc(
-          #{$h4-min-xs}px + (#{$h4-max-xs} - #{$h4-min-xs}) *
-          ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs}))
+    #{$f24-min-xs}px + (#{$f24-max-md} - #{$f24-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$f24-minLH-xs}px + (#{$f24-maxLH-md} - #{$f24-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
   );
 }
+// END: 24px - 16px ---------
+
+// 20px - 18px --------------
+$f20l-min-xs: 18;
+$f20l-max-md: 20;
+$f20l-max: 20;
+
+$f20l-minLH-xs: 24;
+$f20l-maxLH-md: 28;
+$f20l-maxLH: 28;
+
+.fnt20l,
+.fnt20l * {
+  font-size: calc(
+    #{$f20l-min-xs}px + (#{$f20l-max-md} - #{$f20l-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$f20l-minLH-xs}px + (#{$f20l-maxLH-md} - #{$f20l-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+}
+// END: 24px - 16px ---------
+
+// 16px - 14px --------------
+$f16s-min-xs: 14;
+$f16s-max-md: 16;
+$f16s-max: 16;
+
+$f16s-minLH-xs: 16;
+$f16s-maxLH-md: 20;
+$f16s-maxLH: 20;
+
+.fnt16s,
+.fnt16s * {
+  font-size: calc(
+    #{$f16s-min-xs}px + (#{$f16s-max-md} - #{$f16s-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$f16s-minLH-xs}px + (#{$f16s-maxLH-md} - #{$f16s-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+}
+// END: 16px - 14px ---------
+
+// 16px - 24px --------------
+$f16r-min-xs: 24;
+$f16r-max-md: 16;
+$f16r-max: 16;
+
+$f16r-minLH-xs: 32;
+$f16r-maxLH-md: 18;
+$f16r-maxLH: 18;
+
+.fnt16r,
+.fnt16r * {
+  font-size: calc(
+    #{$f16r-min-xs}px + (#{$f16r-max-md} - #{$f16r-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$f16r-minLH-xs}px + (#{$f16r-maxLH-md} - #{$f16r-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+}
+// END: 16px - 14px ---------
+
+// 16px - 18px --------------
+$f16rs-min-xs: 18;
+$f16rs-max-md: 16;
+$f16rs-max: 16;
+
+$f16rs-minLH-xs: 20;
+$f16rs-maxLH-md: 18;
+$f16rs-maxLH: 18;
+
+.fnt16rs,
+.fnt16rs * {
+  font-size: calc(
+    #{$f16rs-min-xs}px + (#{$f16rs-max-md} - #{$f16rs-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$f16rs-minLH-xs}px + (#{$f16rs-maxLH-md} - #{$f16rs-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+}
+// END: 16px - 14px ---------
+
+// 16px fixed ---------------
+.fnt16f,
+.fnt16f * {
+  font-size: 16px;
+  line-height: 20px;
+}
+// END: 14px fixed ----------
+
+// 14px fixed ---------------
+.fnt14f,
+.fnt14f * {
+  font-size: 14px;
+  line-height: 16px;
+}
+// END: 14px fixed ----------
+
+// 12px fixed ---------------
+.fnt13f,
+.fnt13f * {
+  font-size: 13px;
+  line-height: 16px;
+}
+// END: 14px fixed ----------
+
+// 12px fixed ---------------
+.fnt12f,
+.fnt12f * {
+  font-size: 12px;
+  line-height: 16px;
+}
+// END: 14px fixed ----------
+
+// 12px - 10px --------------
+$f12-min-xs: 10;
+$f12-max-md: 12;
+$f12-max: 12;
+
+$f12-minLH-xs: 12;
+$f12-maxLH-md: 14;
+$f12-maxLH: 14;
+
+.fnt12,
+.fnt12 * {
+  font-size: calc(
+    #{$f12-min-xs}px + (#{$f12-max-md} - #{$f12-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$f12-minLH-xs}px + (#{$f12-maxLH-md} - #{$f12-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+}
+// END: 12px - 10px ---------
 
 // A.3. END -----------------------------------------------
 
-// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// B. MEDIA QUERIES ---------------------------------------
+// B.1. GRACEFUL DEGRADATION ---------------
 
-// B. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@media ($md-dn) {
+}
 
+// 575px down
+@media ($xs-dn) {
+}
+
+// B.1. END --------------------------------
+
+// B.2. PROGRESSIVE ENHANCEMENT ------------
+// 576px up
 @media ($sm-up) {
-  // A.3. TYPOGRAPHY STYING ---------------------------------
-
-  h1,
-  .a-h1 {
-    font-size: calc(
-            #{$h1-min-sm}px + (#{$h1-max-sm} - #{$h1-min-sm}) *
-            ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm}))
-    );
-  }
-
-  h2,
-  .a-h2 {
-    font-size: calc(
-            #{$h2-min-sm}px + (#{$h2-max-sm} - #{$h2-min-sm}) *
-            ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm}))
-    );
-  }
-
-  h3,
-  .a-h3 {
-    font-size: calc(
-            #{$h3-min-sm}px + (#{$h3-max-sm} - #{$h3-min-sm}) *
-            ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm}))
-    );
-  }
-
-  h4,
-  .a-h4 {
-    font-size: calc(
-            #{$h4-min-sm}px + (#{$h4-max-sm} - #{$h4-min-sm}) *
-            ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm}))
-    );
-  }
-
-  p,
-  .a-p {
-  }
-
-  // A.3. END -----------------------------------------------
 }
 
-// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// C. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+// 768px up
 @media ($md-up) {
-  // A.3. TYPOGRAPHY STYING ---------------------------------
-
-  h1,
-  .a-h1 {
-    font-size: calc(
-            #{$h1-min-md}px + (#{$h1-max-md} - #{$h1-min-md}) *
-            ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md}))
-    );
-  }
-
-  h2,
-  .a-h2 {
-    font-size: calc(
-            #{$h2-min-md}px + (#{$h2-max-md} - #{$h2-min-md}) *
-            ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md}))
-    );
-  }
-
-  h3,
-  .a-h3 {
-    font-size: calc(
-            #{$h3-min-md}px + (#{$h3-max-md} - #{$h3-min-md}) *
-            ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md}))
-    );
-  }
-
-  h4,
-  .a-h4 {
-    font-size: calc(
-            #{$h4-min-md}px + (#{$h4-max-md} - #{$h4-min-md}) *
-            ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md}))
-    );
-  }
-
-  p,
-  .a-p {
-  }
-
-  // A.3. END -----------------------------------------------
 }
 
-// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// D. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+// 992px up
 @media ($lg-up) {
-  // A.3. TYPOGRAPHY STYING ---------------------------------
+}
 
+// 1200px up
+@media ($xl-up) {
+}
+
+// 1400px up
+@media ($xxl-up) {
   h1,
-  .a-h1 {
-    font-size: $h1-max + px;
+  .fntH1 {
+    font-size: #{$h1-max}px;
+    line-height: #{$h1-maxLH}px;
   }
-
   h2,
-  .a-h2 {
-    font-size: $h2-max + px;
+  .fntH2 {
+    font-size: #{$h2-max}px;
+    line-height: #{$h2-maxLH}px;
   }
-
-  h3,
-  .a-h3 {
-    font-size: $h3-max + px;
+  .fnt30f,
+  .fnt30f * {
+    font-size: 30px;
+    line-height: normal;
   }
-
-  h4,
-  .a-h4 {
-    font-size: $h4-max + px;
+  .fnt25f,
+  .fnt25f * {
+    font-size: 25px;
+    line-height: normal;
   }
-
-  // A.3. END -----------------------------------------------
+  .fnt24f,
+  .fnt24f * {
+    font-size: 24px;
+    line-height: normal;
+  }
+  .fnt20l,
+  .fnt20l * {
+    font-size: #{$f20l-max}px;
+    line-height: #{$f20l-maxLH}px;
+  }
+  .fnt16f,
+  .fnt16f * {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .fnt16r,
+  .fnt16r * {
+    font-size: #{$f16r-max}px;
+    line-height: #{$f16r-maxLH}px;
+  }
+  .fnt16rs,
+  .fnt16rs * {
+    font-size: #{$f16rs-max}px;
+    line-height: #{$f16rs-maxLH}px;
+  }
+  .fnt16s,
+  .fnt16s * {
+    font-size: #{$f16s-max}px;
+    line-height: #{$f16s-maxLH}px;
+  }
+  .fnt14f,
+  .fnt14f * {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .fnt13f,
+  .fnt13f * {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .fnt12f,
+  .fnt12f * {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 
-// D. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// E. MIN-WIDTH: 1900px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-@media ($hd-up) {
-  .a-fnt-16, .a-fnt-16 * { font-size: $fnt16-max + px; line-height: $fnt16-maxLH + px; }
-  .a-fnt-16f, .a-fnt-16f * { font-size: $fnt16f-max + px; line-height: $fnt16f-maxLH+px; }
-  .a-fnt-16s, .a-fnt-16s * { font-size: $fnt16s-max + px; line-height: $fnt16s-maxLH + px; }
-  .a-fnt-32,
-  .a-fnt-32 * {
-    font-size: $fnt32-max + px; line-height: $fnt32-maxLH + px;
-  }
-  .a-fnt-32l,
-  .a-fnt-32l * {
-    font-size: $fnt32L-max + px; line-height: $fnt32L-maxLH + px;
-  }
-  .a-fnt-36,
-  .a-fnt-36 * {
-    font-size: $fnt36-max + px; line-height: $fnt36-maxLH + px;
-  }
-}
-
-// E. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// B.2. END --------------------------------
+// B. END -------------------------------------------------
 
 // END OF FILE ########################################################################################################
