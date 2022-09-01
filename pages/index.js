@@ -44,13 +44,17 @@ export default function Recipes({ Page }) {
   console.log("Page", Page);
   return (
     <>
+      <div id="top"></div>
       <Nav />
       <ComponentHeroBanner heroBanner={heroBanner} />
+      <div id="about"></div>
       <Component2ColumnImageText contentModule={componentAbout} />
       <FounderProfile contentModule={componentTania} />
       <FounderProfile contentModule={componentAdele} />
+      <div id="services"></div>
       <ServiceComponent contentModule={componentTMS} />
       <ServiceComponent contentModule={componentLC} />
+      <div id="training"></div>
       <ServiceComponent contentModule={componentTraining} />
     </>
   );
