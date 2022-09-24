@@ -9,9 +9,6 @@ function ComponentHeroBanner({ heroBanner }) {
   return (
     <section className={classes.oHeroBlock}>
       <div className={`${classes.oContentBlock}`}>
-        {subtitle >= 1 && <h2>{subtitle} goes here ....</h2>}
-        <h2>{subtitle} not here ....</h2>
-
         <figure className={classes.mLogo}>
           <Image
             className={`${classes.aImage} a-responsive-image`}

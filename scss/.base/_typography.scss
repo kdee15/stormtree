@@ -30,7 +30,6 @@ $h1-minLH-xs: 36; // minimum line height at smallest screen size
 $h1-maxLH-md: 52; // maximum line height at largest screen size
 $h1-maxLH: 52; // failsafe for larger screens
 
-h1,
 .fntH1 {
   font-size: calc(
     #{$h1-min-xs}px + (#{$h1-max-md} - #{$h1-min-xs}) *
@@ -52,7 +51,6 @@ $h2-minLH-xs: 30;
 $h2-maxLH-md: 56;
 $h2-maxLH: 56;
 
-h2,
 .fntH2 {
   font-size: calc(
     #{$h2-min-xs}px + (#{$h2-max-md} - #{$h2-min-xs}) *
@@ -286,12 +284,10 @@ $f12-maxLH: 14;
 
 // 1400px up
 @media ($xxl-up) {
-  h1,
   .fntH1 {
     font-size: #{$h1-max}px;
     line-height: #{$h1-maxLH}px;
   }
-  h2,
   .fntH2 {
     font-size: #{$h2-max}px;
     line-height: #{$h2-maxLH}px;

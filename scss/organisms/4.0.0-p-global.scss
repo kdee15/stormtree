@@ -17,8 +17,13 @@ h4 {
 
 // A.2. GENERAL CARDS -------------------------------------
 
-.row {
-  &.image__left {
+.mBlockContent {
+  h4 {
+    margin-bottom: 10px;
+  }
+  ul {
+    margin-bottom: 15px;
+    font-size: 14px;
   }
 }
 
