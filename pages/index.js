@@ -43,8 +43,7 @@ export default function Recipes({ Page }) {
   const componentTraining = Page[0].fields.components[6].fields;
   console.log("Page", Page);
   return (
-    <>
-      <div id="top"></div>
+    <div id="top">
       <Nav />
       <ComponentHeroBanner heroBanner={heroBanner} />
       <div id="about"></div>
@@ -56,6 +55,6 @@ export default function Recipes({ Page }) {
       <ServiceComponent contentModule={componentLC} />
       <div id="training"></div>
       <ServiceComponent contentModule={componentTraining} />
-    </>
+    </div>
   );
 }

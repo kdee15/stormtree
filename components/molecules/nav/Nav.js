@@ -35,47 +35,53 @@ export default function Nav() {
           </ul>
         </nav>
       ) : (
-        <nav className={classes.navMain}>
+        <nav className={classes.navMobile}>
           <span onClick={handleToggle} className={classes.burgerWrapper}>
             <BurgerMenu />
           </span>
-          <ul
+          <div
             className={`${classes.mNavMobile} ${
               isActive ? `${classes.navOpen}` : `${classes.navClosed}`
             }`}
           >
-            <span onClick={handleToggle} className={classes.mNavBurger}>
+            <div onClick={handleToggle} className={classes.mNavBurger}>
               <BurgerMenu handleToggle={handleToggle} isActive={isActive} />
-            </span>
-            <li className={classes.navLink}>
-              <a className={classes.aLink} href="#top" onClick={handleToggle}>
-                HOME
-              </a>
-            </li>
-            <li className={classes.navLink}>
-              <a className={classes.aLink} href="#about" onClick={handleToggle}>
-                ABOUT
-              </a>
-            </li>
-            <li className={classes.navLink}>
-              <a
-                className={classes.aLink}
-                href="#services"
-                onClick={handleToggle}
-              >
-                SERVICES
-              </a>
-            </li>
-            <li className={classes.navLink}>
-              <a
-                className={classes.aLink}
-                href="#training"
-                onClick={handleToggle}
-              >
-                TRAINING
-              </a>
-            </li>
-          </ul>
+            </div>
+            <ul>
+              <li className={classes.navLink}>
+                <a className={classes.aLink} href="#top" onClick={handleToggle}>
+                  HOME
+                </a>
+              </li>
+              <li className={classes.navLink}>
+                <a
+                  className={classes.aLink}
+                  href="#about"
+                  onClick={handleToggle}
+                >
+                  ABOUT
+                </a>
+              </li>
+              <li className={classes.navLink}>
+                <a
+                  className={classes.aLink}
+                  href="#services"
+                  onClick={handleToggle}
+                >
+                  SERVICES
+                </a>
+              </li>
+              <li className={classes.navLink}>
+                <a
+                  className={classes.aLink}
+                  href="#training"
+                  onClick={handleToggle}
+                >
+                  TRAINING
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
       )}
     </>
