@@ -37,7 +37,9 @@ export function ServicesCarousel({ services }) {
     <div className={classes.oServicesBlock}>
       <div className={`container`}>
         <div className={`row no-gutters`}>
-          <h2 className={classes.aBlockTitle}>EPOKOTHWENI SERVICES</h2>
+          <h2 className={`${classes.aBlockTitle} fntH2`}>
+            EPOKOTHWENI SERVICES
+          </h2>
           <p className={classes.aBlockDesc}>
             Services offered fully bilingually in English and Isixhosa according
             to client preference

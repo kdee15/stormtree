@@ -6,7 +6,7 @@ function ComponentVideoBlock({ contentModule }) {
     <section className={`${classes.oVideoBlock}`}>
       <div className={`${classes.oContainer} container`}>
         <div className={`${classes.oRow} row`}>
-          <h2 className={classes.aBlockTitle}>{title}</h2>
+          <h2 className={`${classes.aBlockTitle} fntH2`}>{title}</h2>
           <div
             className={`${classes.oVideo} oBlockBody col-12 col-md-6 offset-md-3`}
           >

@@ -14,9 +14,9 @@ function ServiceComponent({ contentModule }) {
           backgroundImage: `url(http:${image.fields.file.url})`,
         }}
       >
-        <h2 className={classes.aBlockTitle}>{title}</h2>
+        <h2 className={`${classes.aBlockTitle} fntH2`}>{title}</h2>
       </div>
-      <div className={`${classes.oBlockBody}`}>
+      <div className={`${classes.oBlockBody} mBlockContent`}>
         {documentToReactComponents(copy)}
       </div>
     </section>

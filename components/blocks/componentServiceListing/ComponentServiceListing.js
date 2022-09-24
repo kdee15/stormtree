@@ -37,7 +37,7 @@ function ComponentServiceListing({ contentModule }) {
     <footer className={classes.oServicesBlock}>
       <div className={`container`}>
         <div className={`row`}>
-          <h2 className={classes.aBlockTitle}>{data.title}</h2>
+          <h2 className={`${classes.aBlockTitle} fntH2`}>{data.title}</h2>
           <div className={classes.aBlockDesc}>{data.blockCopy}</div>
         </div>
         <div className={`row`}>

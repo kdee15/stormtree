@@ -9,7 +9,7 @@ function Component2ColumnImageText({ contentModule }) {
       className={`${classes.oTextImageBlock} ${classes[`${imagePosition}`]}`}
     >
       <div className={`${classes.oBlockBody}`}>
-        <h2 className={classes.aBlockTitle}>{title}</h2>
+        <h2 className={`${classes.aBlockTitle} fntH2`}>{title}</h2>
         <div>{documentToReactComponents(copy)}</div>
       </div>
       <figure
