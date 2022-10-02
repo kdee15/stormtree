@@ -22,21 +22,40 @@ export default function Nav() {
         <ul className={classes.mMenu}>
           <li className={classes.navLink}>
             <a className={classes.aLink} href="#top" onClick={handleToggle}>
-              HOME
+              Home
             </a>
           </li>
           <li className={classes.navLink}>
             <a className={classes.aLink} href="#about" onClick={handleToggle}>
-              ABOUT
+              About
+            </a>
+          </li>
+          <li className={classes.navLink}>
+            <a className={classes.aLink} href="#tania" onClick={handleToggle}>
+              Tania Molteno
+            </a>
+          </li>
+          <li className={classes.navLink}>
+            <a className={classes.aLink} href="#adele" onClick={handleToggle}>
+              Adele Segers
             </a>
           </li>
           <li className={classes.navLink}>
             <a
               className={classes.aLink}
-              href="#services"
+              href="#management"
               onClick={handleToggle}
             >
-              SERVICES
+              Talent Management Solutions
+            </a>
+          </li>
+          <li className={classes.navLink}>
+            <a
+              className={classes.aLink}
+              href="#consulting"
+              onClick={handleToggle}
+            >
+              Labour Consulting
             </a>
           </li>
           <li className={classes.navLink}>
@@ -45,7 +64,7 @@ export default function Nav() {
               href="#training"
               onClick={handleToggle}
             >
-              TRAINING
+              Training
             </a>
           </li>
         </ul>
