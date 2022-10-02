@@ -1,11 +1,18 @@
+import React from "react";
 import { isMobile } from "react-device-detect";
 import classes from "./ComponentHeroBanner.module.scss";
 import Image from "next/image";
-import React from "react";
+import { useState, useEffect } from "react";
 
 function ComponentHeroBanner({ heroBanner }) {
+  const [mobileView, setMobileView] = useState();
   const { backgroundImage, backgroundImageMobile, logo } = heroBanner;
   console.log("heroBanner", heroBanner);
+
+  useEffect(() => {
+    setMobileView(isMobile);
+  }, []);
+
   return (
     <section className={classes.oHeroBlock}>
       <div className={`${classes.oContentBlock}`}>
@@ -23,7 +30,7 @@ function ComponentHeroBanner({ heroBanner }) {
         </figure>
       </div>
       <figure className={classes.introImage}>
-        {isMobile ? (
+        {mobileView ? (
           <Image
             className={classes.oImageBlockMobile}
             src={backgroundImageMobile.fields.file.url}
