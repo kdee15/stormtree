@@ -7,7 +7,7 @@
   .mLogo {
     width: 80%;
     max-width: 400px;
-    margin: 25vh auto 15vh;
+    margin: 10vh auto 15vh;
   }
 
   .introImage {
@@ -26,6 +26,9 @@
   // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
   @media ($md-up) {
+    .mLogo {
+      margin: 25vh auto 15vh;
+    }
   }
 
   // C. END +++++++++++++++++++++++++++++++++++++++++++++++
