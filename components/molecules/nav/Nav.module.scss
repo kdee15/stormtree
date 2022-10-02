@@ -57,6 +57,14 @@
 // B. GRACEFUL DEGRADATION ++++++++++++++++++++++++++++++
 
 @media ($md-dn) {
+  .mMenu {
+    margin: 50px auto;
+    padding: 0;
+    text-align: center;
+    .navLink {
+      display: block;
+    }
+  }
 }
 
 // B. END +++++++++++++++++++++++++++++++++++++++++++++++
