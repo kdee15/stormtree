@@ -31,6 +31,23 @@
   text-align: right;
   .navLink {
     display: inline-block;
+    position: relative;
+    &:after {
+      position: absolute;
+      bottom: 10px;
+      width: 0;
+      content: "";
+      height: 2px;
+      background-color: #000;
+      @include center-align();
+      transition: 0.3s;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+        transition: 0.3s;
+      }
+    }
   }
 }
 
