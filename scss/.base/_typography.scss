@@ -63,6 +63,14 @@ $h2-maxLH: 56;
 }
 // END: H2 ------------------
 
+// 72px fixed ---------------
+.fnt72f,
+.fnt72f * {
+  font-size: 72px;
+  line-height: normal;
+}
+// END: 25px fixed ----------
+
 // 25px fixed ---------------
 .fnt30f,
 .fnt30f * {
@@ -291,6 +299,11 @@ $f12-maxLH: 14;
   .fntH2 {
     font-size: #{$h2-max}px;
     line-height: #{$h2-maxLH}px;
+  }
+  .fnt72f,
+  .fnt72f * {
+    font-size: 72px;
+    line-height: normal;
   }
   .fnt30f,
   .fnt30f * {

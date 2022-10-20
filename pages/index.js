@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import Component2ColumnImageText from "../components/blocks/component2ColumnImageText/Component2ColumnImageText";
 import ComponentHeroBanner from "../components/blocks/componentHeroBanner/ComponentHeroBanner";
+import ComponentReasons from "../components/blocks/componentReasons/ComponentReasons";
 import Nav from "../components/molecules/nav/Nav";
 import FounderProfile from "../components/organisms/founderProfile/FounderProfile";
 import ServiceComponent from "../components/organisms/serviceComponent/ServiceComponent";
@@ -35,6 +36,9 @@ export default function Recipes({ Page }) {
   const componentTMS = Page[0].fields.components[4].fields;
   const componentLC = Page[0].fields.components[5].fields;
   const componentTraining = Page[0].fields.components[6].fields;
+  const componentReasons = Page[0].fields.components[7].fields;
+
+  console.log("page", Page);
   return (
     <div className="anchor" id="top">
       <Nav />
@@ -45,6 +49,8 @@ export default function Recipes({ Page }) {
       <FounderProfile contentModule={componentTania} />
       <div className="anchor" id="adele"></div>
       <FounderProfile contentModule={componentAdele} />
+      <div className="anchor" id="reasons"></div>
+      <ComponentReasons contentModule={componentReasons} />
       <div className="anchor" id="management"></div>
       <ServiceComponent contentModule={componentTMS} />
       <div className="anchor" id="consulting"></div>
