@@ -20,7 +20,6 @@ function ComponentReasons({ contentModule }) {
     reasonTitle3,
     reasonCopy3,
   } = contentModule;
-  console.log("ComponentReasons", contentModule);
 
   useEffect(() => {
     setMobileView(isMobile);
