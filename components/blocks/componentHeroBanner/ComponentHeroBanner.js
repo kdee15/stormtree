@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 function ComponentHeroBanner({ heroBanner }) {
   const [mobileView, setMobileView] = useState();
   const { backgroundImage, backgroundImageMobile, logo } = heroBanner;
-  console.log("heroBanner", heroBanner);
 
   useEffect(() => {
     setMobileView(isMobile);
