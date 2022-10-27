@@ -5,7 +5,6 @@ import classes from "./ComponentTitleImageTextCard.module.scss";
 
 function ComponentTitleImageTextCard({ item }) {
   const { title, image, description } = item.fields;
-  console.log("card", item.fields);
   return (
     <div className={`${classes.oCard}`}>
       <figure

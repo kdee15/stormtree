@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import Component2ColumnImageText from "../components/blocks/component2ColumnImageText/Component2ColumnImageText";
+import Footer from "../components/blocks/componentFooter/ComponentFooter";
 import ComponentHeroBanner from "../components/blocks/componentHeroBanner/ComponentHeroBanner";
 import ComponentReasons from "../components/blocks/componentReasons/ComponentReasons";
 import Nav from "../components/molecules/nav/Nav";
@@ -40,6 +41,7 @@ export default function Recipes({ Page }) {
   const componentTraining = Page[0].fields.components[6].fields;
   const componentReasons = Page[0].fields.components[7].fields;
   const componentOfferings = Page[0].fields.components[8].fields;
+  const componentFooter = Page[0].fields.components[9].fields;
 
   console.log("page", Page);
   return (
@@ -62,6 +64,7 @@ export default function Recipes({ Page }) {
       <ServiceComponent contentModule={componentLC} />
       <div className="anchor" id="training"></div>
       <ServiceComponent contentModule={componentTraining} />
+      <Footer contentModule={componentFooter} />
     </div>
   );
 }
