@@ -35,7 +35,6 @@ function Component3Column({ contentModule }) {
     ],
   };
 
-  console.log("3Col", contentModule);
   return (
     <section className={`${classes.o3ColumnBlock}`}>
       <h2 className={`${classes.aBlockTitle} fntH2`}>{title}</h2>

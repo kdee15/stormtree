@@ -43,7 +43,11 @@
       }
       &:hover,
       &.slick-active {
-        box-shadow: 0 0 5px black;
+        box-shadow: 0 0 6px 4px black;
+      }
+      &:active,
+      &:focus {
+        box-shadow: none;
       }
     }
   }
