@@ -48,7 +48,6 @@ export default function Recipes({ Page }) {
   return (
     <div className="anchor" id="top">
       <Nav />
-      {/* <ComponentHeroBanner heroBanner={heroBanner} /> */}
       <ComponentHeroCarousel contentModule={heroBanner} />
       <div className="anchor" id="about"></div>
       <Component2ColumnImageText contentModule={componentAbout} />
