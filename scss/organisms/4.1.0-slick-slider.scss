@@ -71,6 +71,10 @@
     .slick-slide {
       padding: 0;
     }
+    .slick-dots {
+      @include center-align();
+      bottom: 20px;
+    }
   }
 }
 
