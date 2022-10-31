@@ -2,6 +2,7 @@ import { createClient } from "contentful";
 import Component2ColumnImageText from "../components/blocks/component2ColumnImageText/Component2ColumnImageText";
 import Footer from "../components/blocks/componentFooter/ComponentFooter";
 import ComponentHeroBanner from "../components/blocks/componentHeroBanner/ComponentHeroBanner";
+import ComponentHeroCarousel from "../components/blocks/componentHeroCarousel/ComponentHeroCarousel";
 import ComponentReasons from "../components/blocks/componentReasons/ComponentReasons";
 import Nav from "../components/molecules/nav/Nav";
 import Component3Column from "../components/organisms/component3Column/Component3Column";
@@ -47,7 +48,8 @@ export default function Recipes({ Page }) {
   return (
     <div className="anchor" id="top">
       <Nav />
-      <ComponentHeroBanner heroBanner={heroBanner} />
+      {/* <ComponentHeroBanner heroBanner={heroBanner} /> */}
+      <ComponentHeroCarousel contentModule={heroBanner} />
       <div className="anchor" id="about"></div>
       <Component2ColumnImageText contentModule={componentAbout} />
       <div className="anchor" id="tania"></div>

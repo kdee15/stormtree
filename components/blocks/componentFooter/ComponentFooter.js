@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./ComponentFooter.module.scss";
 
 function Footer({ contentModule }) {
-  console.log("footer", contentModule);
   const { linkList } = contentModule;
   return (
     <footer className={classes.oFooter}>
