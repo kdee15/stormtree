@@ -33,15 +33,9 @@ function ComponentHeroCarousel({ contentModule }) {
       </figure>
       <div className={`${classes.oCarouselBlock} oCarouselBlock`}>
         <Slider {...settings}>
-          {carouselImages.map((item, index) => (
-            <ComponentCarouselImage item={item} key={index} />
+          {carouselImages.map((item) => (
+            <ComponentCarouselImage item={item} key={item.sys.id} />
           ))}
-          <style jsx>{`
-            .oCarouselBlock .slick-slide {
-              height: inherit !important;
-              padding: 0 !important;
-            }
-          `}</style>
         </Slider>
       </div>
     </section>
