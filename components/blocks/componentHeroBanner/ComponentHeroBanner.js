@@ -6,14 +6,19 @@ import { useState, useEffect } from "react";
 
 function ComponentHeroBanner({ heroBanner }) {
   const [mobileView, setMobileView] = useState();
-  const { backgroundImage, backgroundImageMobile, logo } = heroBanner;
+  const { backgroundImage, backgroundImageMobile, logo, homepage } = heroBanner;
+  console.log("homepage", homepage);
 
   useEffect(() => {
     setMobileView(isMobile);
   }, []);
 
   return (
-    <section className={classes.oHeroBlock}>
+    <section
+      className={`${classes.oHeroBlock} ${
+        homepage ? classes.oHome : classes.oPage
+      }`}
+    >
       <div className={`${classes.oContentBlock}`}>
         <figure className={classes.mLogo}>
           <Image

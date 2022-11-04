@@ -4,14 +4,34 @@
 .oHeroBlock {
   // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
 
-  .mLogo {
-    width: 80%;
-    max-width: 400px;
-    margin: 10vh auto 15vh;
+  &.oHome {
+    .mLogo {
+      width: 80%;
+      max-width: 400px;
+      margin: 10vh auto 15vh;
+    }
+
+    .introImage {
+      padding: 0 50px;
+    }
   }
 
-  .introImage {
-    padding: 0 50px;
+  &.oPage {
+    max-height: 600px;
+    position: relative;
+    overflow: hidden;
+    .mLogo {
+      width: 10%;
+      max-width: 400px;
+      margin: 10vh auto 15vh;
+    }
+
+    .introImage {
+      padding: 0;
+    }
+    .introImage {
+      @include position(absolute, 0);
+    }
   }
 
   // A. END +++++++++++++++++++++++++++++++++++++++++++++++
