@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 
 function ComponentHeroBanner({ heroBanner }) {
   const [mobileView, setMobileView] = useState();
-  const { backgroundImage, backgroundImageMobile, logo, homepage } = heroBanner;
+  const { title, backgroundImage, backgroundImageMobile, logo, homepage } =
+    heroBanner;
   console.log("homepage", homepage);
 
   useEffect(() => {
@@ -20,18 +21,22 @@ function ComponentHeroBanner({ heroBanner }) {
       }`}
     >
       <div className={`${classes.oContentBlock}`}>
-        <figure className={classes.mLogo}>
-          <Image
-            className={`${classes.aImage} a-responsive-image`}
-            src={logo.fields.file.url}
-            alt={`title`}
-            width={logo.fields.file.details.image.width}
-            height={logo.fields.file.details.image.height}
-            aria-hidden="true"
-            layout="responsive"
-            priority="true"
-          />
-        </figure>
+        {homepage ? (
+          <figure className={classes.mLogo}>
+            <Image
+              className={`${classes.aImage} a-responsive-image`}
+              src={logo.fields.file.url}
+              alt={`title`}
+              width={logo.fields.file.details.image.width}
+              height={logo.fields.file.details.image.height}
+              aria-hidden="true"
+              layout="responsive"
+              priority="true"
+            />
+          </figure>
+        ) : (
+          <h1 className={`${classes.aTitle} fntH1`}>{title}</h1>
+        )}
       </div>
       <figure className={classes.introImage}>
         {mobileView ? (
