@@ -20,6 +20,16 @@
     max-height: 600px;
     position: relative;
     overflow: hidden;
+    .oContentBlock {
+      position: relative;
+      padding: 100px 0;
+      z-index: 10;
+      .aTitle {
+        text-align: center;
+        display: block;
+        text-shadow: 0 0 15px black;
+      }
+    }
     .mLogo {
       width: 10%;
       max-width: 400px;
