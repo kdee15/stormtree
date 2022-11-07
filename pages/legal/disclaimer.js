@@ -36,7 +36,6 @@ export default function Home({ legalPage }) {
   const bodyCopy = pageItem.components[1].fields;
   const componentFooter = pageItem.components[2].fields;
 
-  console.log("legalPage", legalPage);
   return (
     <div className="anchor" id="top">
       <ComponentHeroBanner heroBanner={heroBanner} />

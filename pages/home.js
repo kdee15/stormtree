@@ -43,7 +43,6 @@ export default function Home({ Page }) {
   const componentOfferings = Page[0].fields.components[8].fields;
   const componentFooter = Page[0].fields.components[9].fields;
 
-  console.log("page", Page);
   return (
     <div className="anchor" id="top">
       <Nav />

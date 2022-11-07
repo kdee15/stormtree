@@ -2,7 +2,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import classes from "./ComponentBodyCopy.module.scss";
 
 export default function ComponentBodyCopy({ contentModule }) {
-  console.log("ComponentBodyCopy", contentModule);
   const { title, copy } = contentModule;
   return (
     <section className={classes.introBlock}>

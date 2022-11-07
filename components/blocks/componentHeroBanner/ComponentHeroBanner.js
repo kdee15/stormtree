@@ -14,7 +14,6 @@ function ComponentHeroBanner({ heroBanner }) {
     textAlign,
     homepage,
   } = heroBanner;
-  console.log("textAlign", textAlign);
 
   useEffect(() => {
     setMobileView(isMobile);

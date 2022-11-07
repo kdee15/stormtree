@@ -5,7 +5,6 @@ import classes from "./ComponentFooter.module.scss";
 
 function Footer({ contentModule }) {
   const { image, linkList } = contentModule;
-  console.log("Footer", contentModule);
   return (
     <footer className={classes.oFooter}>
       <div className={`container`}>
