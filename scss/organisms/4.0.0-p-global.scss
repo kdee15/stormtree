@@ -2,19 +2,6 @@
 
 // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// A.1. FONTS ---------------------------------------------
-
-h1,
-h2 {
-  font-family: $alex;
-}
-
-h3,
-h4 {
-  font-family: $cormorant;
-}
-// A.1. END -----------------------------------------------
-
 // A.2. GENERAL CARDS -------------------------------------
 
 .mBlockContent {
@@ -30,10 +17,10 @@ h4 {
 footer {
   padding: 50px 0;
   .footer-col-1 {
-    order: 3;
+    order: 1;
   }
   .footer-col-2 {
-    order: 1;
+    order: 3;
   }
   .footer-col-3 {
     order: 2;

@@ -30,7 +30,7 @@ $h1-minLH-xs: 36; // minimum line height at smallest screen size
 $h1-maxLH-md: 52; // maximum line height at largest screen size
 $h1-maxLH: 52; // failsafe for larger screens
 
-.fntH1 {
+@mixin fntH1 {
   font-size: calc(
     #{$h1-min-xs}px + (#{$h1-max-md} - #{$h1-min-xs}) *
       ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
@@ -39,7 +39,13 @@ $h1-maxLH: 52; // failsafe for larger screens
     #{$h1-minLH-xs}px + (#{$h1-maxLH-md} - #{$h1-minLH-xs}) *
       ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
   );
+
+  @media ($xxl-up) {
+    font-size: #{$h1-max}px;
+    line-height: #{$h1-maxLH}px;
+  }
 }
+
 // END: H1 ------------------
 
 // H2 -----------------------
@@ -51,7 +57,7 @@ $h2-minLH-xs: 30;
 $h2-maxLH-md: 56;
 $h2-maxLH: 56;
 
-.fntH2 {
+@mixin fntH2 {
   font-size: calc(
     #{$h2-min-xs}px + (#{$h2-max-md} - #{$h2-min-xs}) *
       ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
@@ -60,309 +66,107 @@ $h2-maxLH: 56;
     #{$h2-minLH-xs}px + (#{$h2-maxLH-md} - #{$h2-minLH-xs}) *
       ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
   );
-}
-// END: H2 ------------------
 
-// 72px fixed ---------------
-.fnt72f,
-.fnt72f * {
-  font-size: 72px;
-  line-height: normal;
-}
-// END: 25px fixed ----------
-
-// 25px fixed ---------------
-.fnt30f,
-.fnt30f * {
-  font-size: 30px;
-  line-height: normal;
-}
-// END: 25px fixed ----------
-
-// 25px fixed ---------------
-.fnt25f,
-.fnt25f * {
-  font-size: 25px;
-  line-height: normal;
-}
-// END: 25px fixed ----------
-
-// 25px fixed ---------------
-.fnt24f,
-.fnt24f * {
-  font-size: 24px;
-  line-height: normal;
-}
-// END: 25px fixed ----------
-
-// 24px - 16px --------------
-$f24-min-xs: 16;
-$f24-max-md: 24;
-$f24-max: 24;
-
-$f24-minLH-xs: 22;
-$f24-maxLH-md: 28;
-$f24-maxLH: 28;
-
-.fnt24,
-.fnt24 * {
-  font-size: calc(
-    #{$f24-min-xs}px + (#{$f24-max-md} - #{$f24-min-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-    #{$f24-minLH-xs}px + (#{$f24-maxLH-md} - #{$f24-minLH-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-// END: 24px - 16px ---------
-
-// 20px - 18px --------------
-$f20l-min-xs: 18;
-$f20l-max-md: 20;
-$f20l-max: 20;
-
-$f20l-minLH-xs: 24;
-$f20l-maxLH-md: 28;
-$f20l-maxLH: 28;
-
-.fnt20l,
-.fnt20l * {
-  font-size: calc(
-    #{$f20l-min-xs}px + (#{$f20l-max-md} - #{$f20l-min-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-    #{$f20l-minLH-xs}px + (#{$f20l-maxLH-md} - #{$f20l-minLH-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-// END: 24px - 16px ---------
-
-// 16px - 14px --------------
-$f16s-min-xs: 14;
-$f16s-max-md: 16;
-$f16s-max: 16;
-
-$f16s-minLH-xs: 16;
-$f16s-maxLH-md: 20;
-$f16s-maxLH: 20;
-
-.fnt16s,
-.fnt16s * {
-  font-size: calc(
-    #{$f16s-min-xs}px + (#{$f16s-max-md} - #{$f16s-min-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-    #{$f16s-minLH-xs}px + (#{$f16s-maxLH-md} - #{$f16s-minLH-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-// END: 16px - 14px ---------
-
-// 16px - 24px --------------
-$f16r-min-xs: 24;
-$f16r-max-md: 16;
-$f16r-max: 16;
-
-$f16r-minLH-xs: 32;
-$f16r-maxLH-md: 18;
-$f16r-maxLH: 18;
-
-.fnt16r,
-.fnt16r * {
-  font-size: calc(
-    #{$f16r-min-xs}px + (#{$f16r-max-md} - #{$f16r-min-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-    #{$f16r-minLH-xs}px + (#{$f16r-maxLH-md} - #{$f16r-minLH-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-// END: 16px - 14px ---------
-
-// 16px - 18px --------------
-$f16rs-min-xs: 18;
-$f16rs-max-md: 16;
-$f16rs-max: 16;
-
-$f16rs-minLH-xs: 20;
-$f16rs-maxLH-md: 18;
-$f16rs-maxLH: 18;
-
-.fnt16rs,
-.fnt16rs * {
-  font-size: calc(
-    #{$f16rs-min-xs}px + (#{$f16rs-max-md} - #{$f16rs-min-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-    #{$f16rs-minLH-xs}px + (#{$f16rs-maxLH-md} - #{$f16rs-minLH-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-// END: 16px - 14px ---------
-
-// 16px fixed ---------------
-.fnt16f,
-.fnt16f * {
-  font-size: 16px;
-  line-height: 20px;
-}
-// END: 14px fixed ----------
-
-// 14px fixed ---------------
-.fnt14f,
-.fnt14f * {
-  font-size: 14px;
-  line-height: 16px;
-}
-// END: 14px fixed ----------
-
-// 12px fixed ---------------
-.fnt13f,
-.fnt13f * {
-  font-size: 13px;
-  line-height: 16px;
-}
-// END: 14px fixed ----------
-
-// 12px fixed ---------------
-.fnt12f,
-.fnt12f * {
-  font-size: 12px;
-  line-height: 16px;
-}
-// END: 14px fixed ----------
-
-// 12px - 10px --------------
-$f12-min-xs: 10;
-$f12-max-md: 12;
-$f12-max: 12;
-
-$f12-minLH-xs: 12;
-$f12-maxLH-md: 14;
-$f12-maxLH: 14;
-
-.fnt12,
-.fnt12 * {
-  font-size: calc(
-    #{$f12-min-xs}px + (#{$f12-max-md} - #{$f12-min-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-  line-height: calc(
-    #{$f12-minLH-xs}px + (#{$f12-maxLH-md} - #{$f12-minLH-xs}) *
-      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
-  );
-}
-// END: 12px - 10px ---------
-
-// A.3. END -----------------------------------------------
-
-// B. MEDIA QUERIES ---------------------------------------
-// B.1. GRACEFUL DEGRADATION ---------------
-
-@media ($md-dn) {
-}
-
-// 575px down
-@media ($xs-dn) {
-}
-
-// B.1. END --------------------------------
-
-// B.2. PROGRESSIVE ENHANCEMENT ------------
-// 576px up
-@media ($sm-up) {
-}
-
-// 768px up
-@media ($md-up) {
-}
-
-// 992px up
-@media ($lg-up) {
-}
-
-// 1200px up
-@media ($xl-up) {
-}
-
-// 1400px up
-@media ($xxl-up) {
-  .fntH1 {
-    font-size: #{$h1-max}px;
-    line-height: #{$h1-maxLH}px;
-  }
-  .fntH2 {
+  @media ($xxl-up) {
     font-size: #{$h2-max}px;
     line-height: #{$h2-maxLH}px;
   }
-  .fnt72f,
-  .fnt72f * {
-    font-size: 72px;
-    line-height: normal;
-  }
-  .fnt30f,
-  .fnt30f * {
-    font-size: 30px;
-    line-height: normal;
-  }
-  .fnt25f,
-  .fnt25f * {
-    font-size: 25px;
-    line-height: normal;
-  }
-  .fnt24f,
-  .fnt24f * {
-    font-size: 24px;
-    line-height: normal;
-  }
-  .fnt20l,
-  .fnt20l * {
-    font-size: #{$f20l-max}px;
-    line-height: #{$f20l-maxLH}px;
-  }
-  .fnt16f,
-  .fnt16f * {
-    font-size: 16px;
-    line-height: 20px;
-  }
-  .fnt16r,
-  .fnt16r * {
-    font-size: #{$f16r-max}px;
-    line-height: #{$f16r-maxLH}px;
-  }
-  .fnt16rs,
-  .fnt16rs * {
-    font-size: #{$f16rs-max}px;
-    line-height: #{$f16rs-maxLH}px;
-  }
-  .fnt16s,
-  .fnt16s * {
-    font-size: #{$f16s-max}px;
-    line-height: #{$f16s-maxLH}px;
-  }
-  .fnt14f,
-  .fnt14f * {
-    font-size: 14px;
-    line-height: 16px;
-  }
-  .fnt13f,
-  .fnt13f * {
-    font-size: 13px;
-    line-height: 16px;
-  }
-  .fnt12f,
-  .fnt12f * {
-    font-size: 12px;
-    line-height: 16px;
+}
+// END: H2 ------------------
+
+// H3 -----------------------
+$h3-min-xs: 22;
+$h3-max-md: 26;
+$h3-max: 26;
+
+$h3-minLH-xs: 30;
+$h3-maxLH-md: 34;
+$h3-maxLH: 34;
+
+@mixin fntH3 {
+  font-size: calc(
+    #{$h3-min-xs}px + (#{$h3-max-md} - #{$h3-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$h3-minLH-xs}px + (#{$h3-maxLH-md} - #{$h3-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  @media ($xxl-up) {
+    font-size: #{$h3-max}px;
+    line-height: #{$h3-maxLH}px;
   }
 }
+// END: H3 ------------------
 
-// B.2. END --------------------------------
-// B. END -------------------------------------------------
+// H4 -----------------------
+$h4-min-xs: 20;
+$h4-max-md: 22;
+$h4-max: 22;
+
+$h4-minLH-xs: 26;
+$h4-maxLH-md: 30;
+$h4-maxLH: 30;
+
+@mixin fntH4 {
+  font-size: calc(
+    #{$h4-min-xs}px + (#{$h4-max-md} - #{$h4-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$h4-minLH-xs}px + (#{$h4-maxLH-md} - #{$h4-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  @media ($xxl-up) {
+    font-size: #{$h4-max}px;
+    line-height: #{$h4-maxLH}px;
+  }
+}
+// END: H4 ------------------
+
+// Scaled -------------------
+$sf-min-xs: 20;
+$sf-max-md: 22;
+$sf-max: 22;
+
+$sf-minLH-xs: 26;
+$sf-maxLH-md: 30;
+$sf-maxLH: 30;
+
+@mixin scaledFont(
+  $sf-min-xs,
+  $sf-max-md,
+  $sf-max,
+  $sf-minLH-xs,
+  $sf-maxLH-md,
+  $sf-maxLH
+) {
+  font-size: calc(
+    #{$sf-min-xs}px + (#{$sf-max-md} - #{$sf-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: calc(
+    #{$sf-minLH-xs}px + (#{$sf-maxLH-md} - #{$sf-minLH-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  @media ($xxl-up) {
+    font-size: #{$sf-max}px;
+    line-height: #{$sf-maxLH}px;
+  }
+}
+// END: Scaled --------------
+
+// Fixed --------------------
+@mixin font($size) {
+  font-size: #{$size}px;
+  line-height: normal;
+  @media ($xxl-up) {
+    font-size: #{$size}px;
+    line-height: normal;
+  }
+}
+// Fixed --------------------
+
+// A.3. END -----------------------------------------------
 
 // END OF FILE ########################################################################################################

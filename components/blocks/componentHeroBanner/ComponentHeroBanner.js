@@ -6,9 +6,15 @@ import { useState, useEffect } from "react";
 
 function ComponentHeroBanner({ heroBanner }) {
   const [mobileView, setMobileView] = useState();
-  const { title, backgroundImage, backgroundImageMobile, logo, homepage } =
-    heroBanner;
-  console.log("homepage", homepage);
+  const {
+    title,
+    backgroundImage,
+    backgroundImageMobile,
+    logo,
+    textAlign,
+    homepage,
+  } = heroBanner;
+  console.log("textAlign", textAlign);
 
   useEffect(() => {
     setMobileView(isMobile);
@@ -20,7 +26,12 @@ function ComponentHeroBanner({ heroBanner }) {
         homepage ? classes.oHome : classes.oPage
       }`}
     >
-      <div className={`${classes.oContentBlock}`}>
+      <div
+        className={`${classes.oContentBlock}`}
+        style={{
+          textAlign: `${textAlign}`,
+        }}
+      >
         {homepage ? (
           <figure className={classes.mLogo}>
             <Image
@@ -35,7 +46,11 @@ function ComponentHeroBanner({ heroBanner }) {
             />
           </figure>
         ) : (
-          <h1 className={`${classes.aTitle} fntH1`}>{title}</h1>
+          <div className={`container`}>
+            <div className={`row`}>
+              <h1 className={`${classes.aTitle} fntH1 col-12`}>{title}</h1>
+            </div>
+          </div>
         )}
       </div>
       <figure className={classes.introImage}>

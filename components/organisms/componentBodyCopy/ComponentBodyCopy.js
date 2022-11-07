@@ -9,8 +9,7 @@ export default function ComponentBodyCopy({ contentModule }) {
       <div className={`${classes.oContainer} container`}>
         <div className={`${classes.oRow} row`}>
           <div className={`${classes.oBody} col-12`}>
-            <h1 className={`${classes.aTitle} fntH1`}>{title}</h1>
-            <div className={`${classes.aText} fnt16f`}>
+            <div className={classes.aText}>
               {documentToReactComponents(copy)}
             </div>
           </div>
