@@ -23,7 +23,9 @@ function FounderProfile({ contentModule }) {
           <div className={`${classes.oBlockBody} col-12 col-md-6`}>
             <h2 className={`${classes.aBlockTitle} fntH2`}>{title}</h2>
             <h3 className={`${classes.aBlockTitle} fntH3`}>{subtitle}</h3>
-            <div>{documentToReactComponents(copy)}</div>
+            <div className={`${classes.mText}`}>
+              {documentToReactComponents(copy)}
+            </div>
           </div>
         </div>
       </div>
