@@ -38,7 +38,7 @@ h4 *,
 
 .fnt72,
 .fnt72 * {
-  @include scaledFont(32, 72, 72, normal, normal, normal);
+  @include scaledFont(32, 64, 64, normal, normal, normal);
 }
 
 .fnt72f,
