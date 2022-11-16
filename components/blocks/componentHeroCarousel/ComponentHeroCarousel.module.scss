@@ -7,13 +7,26 @@
   min-height: 100vh;
   position: relative;
 
-  .mLogo {
+  .oContent {
     @include middle-align();
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mLogo {
     max-width: 400px;
     width: 80%;
     margin: 0 auto;
     display: block;
-    z-index: 10;
+  }
+  .aSubText {
+    text-align: center;
+    display: block;
   }
 
   .oCarouselBlock {
