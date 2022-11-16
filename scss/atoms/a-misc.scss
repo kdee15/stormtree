@@ -36,14 +36,14 @@ h4 *,
   @include fntH4();
 }
 
-.fnt72,
-.fnt72 * {
-  @include scaledFont(32, 64, 64, normal, normal, normal);
-}
-
 .fnt72f,
 .fnt72f * {
   @include font(72);
+}
+
+.fnt64,
+.fnt64 * {
+  @include scaledFont(32, 64, 64, normal, normal, normal);
 }
 
 .fnt30f,

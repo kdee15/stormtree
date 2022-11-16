@@ -34,7 +34,7 @@ function ComponentHeroCarousel({ contentModule }) {
           />
         </figure>
 
-        <div className={`${classes.aSubText} fnt72`}>
+        <div className={`${classes.aSubText} fnt64`}>
           {documentToReactComponents(description)}
         </div>
       </div>
