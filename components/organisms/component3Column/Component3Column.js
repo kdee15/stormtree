@@ -12,8 +12,8 @@ function Component3Column({ contentModule }) {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    arrows: false,
     adaptiveHeight: true,
-    arrows: true,
     responsive: [
       {
         breakpoint: 991,
@@ -21,7 +21,7 @@ function Component3Column({ contentModule }) {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          arrows: true,
+          arrows: false,
         },
       },
       {
@@ -29,7 +29,7 @@ function Component3Column({ contentModule }) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
+          arrows: false,
         },
       },
     ],
