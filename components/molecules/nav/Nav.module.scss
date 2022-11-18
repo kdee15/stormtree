@@ -4,6 +4,8 @@
 
 // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
 .navMain {
+  position: relative;
+  z-index: 100;
   .mNavMobile {
     position: fixed;
     top: 0;
@@ -58,6 +60,7 @@
   text-decoration: none;
 }
 .burgerWrapper {
+  cursor: pointer;
   position: fixed;
   z-index: 10;
   top: 10px;
@@ -67,6 +70,7 @@
   position: absolute;
   right: 10px;
   top: 10px;
+  cursor: pointer;
 }
 
 // A. END +++++++++++++++++++++++++++++++++++++++++++++++
@@ -74,6 +78,12 @@
 // B. GRACEFUL DEGRADATION ++++++++++++++++++++++++++++++
 
 @media ($md-dn) {
+  .navMain {
+    .mNavMobile {
+      height: 100vh;
+    }
+  }
+
   .mMenu {
     margin: 50px auto;
     padding: 0;
