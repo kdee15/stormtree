@@ -99,6 +99,10 @@
 // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
 @media ($md-up) {
+  .aLink {
+    font-size: 12px;
+    margin: 15px 5px;
+  }
 }
 
 // C. END +++++++++++++++++++++++++++++++++++++++++++++++
@@ -106,37 +110,10 @@
 // D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++
 
 @media ($lg-up) {
-  // .navMain {
-  //   @include vertical-align(fixed);
-  //   left: 1%;
-  //   height: 100%;
-  //   z-index: 10;
-  //   .mNav {
-  //     &.navOpen {
-  //       display: block;
-  //     }
-  //     &.navClosed {
-  //       display: block;
-  //     }
-  //     top: 20vh;
-  //     position: relative;
-  //     list-style-type: none;
-  //     padding: 0;
-  //     margin: 0;
-  //     opacity: 0.4;
-  //     transition: 0.3s;
-  //     &:hover {
-  //       opacity: 1;
-  //       transition: 0.3s;
-  //     }
-  //   }
-  // }
-  // .aLink {
-  //   margin: 15px 0;
-  //   display: block;
-  //   color: white;
-  //   text-decoration: none;
-  // }
+  .aLink {
+    font-size: 12px;
+    margin: 15px 5px;
+  }
 }
 
 // D. END +++++++++++++++++++++++++++++++++++++++++++++++
@@ -144,6 +121,21 @@
 // E. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++
 
 @media ($xl-up) {
+  .aLink {
+    font-size: 14px;
+    margin: 15px 10px;
+  }
+}
+
+// E. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+// E. MIN-WIDTH: 1400px +++++++++++++++++++++++++++++++++
+
+@media ($xxl-up) {
+  .aLink {
+    font-size: 16px;
+    margin: 15px;
+  }
 }
 
 // E. END +++++++++++++++++++++++++++++++++++++++++++++++
