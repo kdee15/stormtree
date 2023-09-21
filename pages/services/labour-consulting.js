@@ -1,4 +1,5 @@
 import { createClient } from "contentful";
+import Nav from "../../components/molecules/nav/Nav";
 const {
   C_SPACE_ID,
   C_DELIVERY_KEY,
@@ -18,21 +19,27 @@ export async function getStaticProps(context) {
 
     .then((entries) => entries.items);
 
+  const resMenu = await client.getEntries({
+    content_type: "componentMenu",
+    include: 10,
+  });
+
   return {
     props: {
       Page: resPage,
+      MainMenu: resMenu.items[0].fields,
     },
     revalidate: 1,
   };
 }
 
-export default function Home({ Page }) {
+export default function Home({ Page, MainMenu }) {
   console.log("Page", Page);
-  const data = Page[1].fields;
-  console.log("data", data);
+  const home = Page[1].fields;
   return (
     <div className="anchor" id="top">
-      <h1>{data.title}</h1>
+      <Nav contentModule={MainMenu} />
+      <h1>{home.title}</h1>
     </div>
   );
 }
