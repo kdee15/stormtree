@@ -4,9 +4,21 @@ query GetHome($slug: String!)  {
       items {
         title
         slug
-        componentsCollection {
+        componentListCollection {
           items {
-            __typename
+            ... on ComponentHeroBanner {
+              __typename
+              title
+              copy {
+                json
+              }
+              image {
+                  title
+                  url
+                  width
+                  height
+              }
+            }
           }
         }
       }

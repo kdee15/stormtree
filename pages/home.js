@@ -25,10 +25,10 @@ export async function getStaticProps(context) {
 
 export default function Home({ Page }) {
   console.log("Page", Page);
-
+  const home = Page[0].fields;
   return (
     <div className="anchor" id="top">
-      <h1>haze gifted</h1>
+      <h1>{home.title}</h1>
     </div>
   );
 }

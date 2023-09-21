@@ -20,7 +20,8 @@ query {
 `;
 
 export const PAGE_LIST = `
-query GetHome {
+query GetPageList
+ {
   pageCollection {
     items {
         title

@@ -1,4 +1,4 @@
-import classes from "./Projects.module.scss";
+import classes from "./Content.module.scss";
 
 const {
   C_DELIVERY_KEY,
@@ -13,16 +13,18 @@ const { PAGE_CONTENT, PAGE_SLUG } = require("../../helpers/data/CONTENT_PAGES");
  * @constructor
  */
 
-export default function Project({ project }) {
+export default function ContentPage({ content }) {
+  console.log("project", content);
+  const { title } = content;
   return (
     <div className={classes.oProjectPage}>
-      <h1>PAGE</h1>
+      <h1>PAGE {title}</h1>
     </div>
   );
 }
 
 export async function getStaticProps({ params }) {
-  const { project } = params;
+  const { content } = params;
 
   const result = await fetch(C_GRAPHQL_URL, {
     method: "POST",
@@ -33,7 +35,7 @@ export async function getStaticProps({ params }) {
     body: JSON.stringify({
       query: PAGE_CONTENT,
       variables: {
-        slug: project,
+        slug: content,
       },
     }),
   });
@@ -44,10 +46,10 @@ export async function getStaticProps({ params }) {
   }
 
   const { data } = await result.json();
-  const [projectData] = data.pageCollection.items;
+  const [contentData] = data.pageCollection.items;
 
   return {
-    props: { project: projectData },
+    props: { content: contentData },
   };
 }
 
@@ -68,10 +70,10 @@ export async function getStaticPaths() {
   }
 
   const { data } = await result.json();
-  const projectSlug = data.pageCollection.items;
-  const paths = projectSlug.map(({ slug }) => {
+  const contentSlug = data.pageCollection.items;
+  const paths = contentSlug.map(({ slug }) => {
     return {
-      params: { project: slug },
+      params: { content: slug },
     };
   });
 
