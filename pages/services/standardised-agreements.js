@@ -1,5 +1,8 @@
 import { createClient } from "contentful";
-const { C_SPACE_ID, C_DELIVERY_KEY } = require("../helpers/contentful-config");
+const {
+  C_SPACE_ID,
+  C_DELIVERY_KEY,
+} = require("../../helpers/contentful-config");
 
 export async function getStaticProps(context) {
   const client = createClient({
@@ -25,7 +28,7 @@ export async function getStaticProps(context) {
 
 export default function Home({ Page }) {
   console.log("Page", Page);
-  const data = Page[4].fields;
+  const data = Page[0].fields;
   console.log("data", data);
   return (
     <div className="anchor" id="top">
