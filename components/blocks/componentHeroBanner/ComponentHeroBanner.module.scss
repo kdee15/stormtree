@@ -4,42 +4,51 @@
 .oHeroBlock {
   // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
 
-  &.oHome {
+  &.bannerHome {
+    min-height: 100vh;
+
+    .introImage {
+      @include position(absolute, 0);
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .oContentBlock {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .mLogo {
       width: 80%;
       max-width: 400px;
-      margin: 10vh auto 15vh;
-    }
-
-    .introImage {
-      padding: 0 50px;
+      margin: 0 auto;
     }
   }
 
-  &.oPage {
-    max-height: 600px;
+  &.bannerPage {
+    min-height: 30vh;
     position: relative;
-    overflow: hidden;
-    .oContentBlock {
-      position: relative;
-      padding: 100px 0;
-      z-index: 10;
-      .aTitle {
-        display: block;
-        text-shadow: 0 0 15px black;
-      }
-    }
-    .mLogo {
-      width: 10%;
-      max-width: 400px;
-      margin: 10vh auto 15vh;
-    }
-
-    .introImage {
-      padding: 0;
-    }
     .introImage {
       @include position(absolute, 0);
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .oContentBlock {
+      display: flex;
+      align-items: center;
+      height: 30vh;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mLogo {
+      width: 80%;
+      max-width: 400px;
+      margin: 0 auto;
     }
   }
 
@@ -55,9 +64,6 @@
   // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
 
   @media ($md-up) {
-    .mLogo {
-      margin: 25vh auto 15vh;
-    }
   }
 
   // C. END +++++++++++++++++++++++++++++++++++++++++++++++

@@ -41,20 +41,6 @@ export default function Nav() {
             </a>
           </li>
           <li className={classes.navLink}>
-            <a className={classes.aLink} href="#reasons" onClick={handleToggle}>
-              Our Reason for Being
-            </a>
-          </li>
-          <li className={classes.navLink}>
-            <a
-              className={classes.aLink}
-              href="#offerings"
-              onClick={handleToggle}
-            >
-              Our Offerings
-            </a>
-          </li>
-          <li className={classes.navLink}>
             <a
               className={classes.aLink}
               href="#management"

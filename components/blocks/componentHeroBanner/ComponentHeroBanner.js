@@ -4,16 +4,16 @@ import classes from "./ComponentHeroBanner.module.scss";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-function ComponentHeroBanner({ heroBanner }) {
+function ComponentHeroBanner({ contentModule }) {
   const [mobileView, setMobileView] = useState();
   const {
     title,
+    subtitle,
     backgroundImage,
     backgroundImageMobile,
     logo,
-    textAlign,
-    homepage,
-  } = heroBanner;
+    homepageBanner,
+  } = contentModule;
 
   useEffect(() => {
     setMobileView(isMobile);
@@ -22,61 +22,67 @@ function ComponentHeroBanner({ heroBanner }) {
   return (
     <section
       className={`${classes.oHeroBlock} ${
-        homepage ? classes.oHome : classes.oPage
+        homepageBanner ? classes.bannerHome : classes.bannerPage
       }`}
     >
-      <div
-        className={`${classes.oContentBlock}`}
-        style={{
-          textAlign: `${textAlign}`,
-        }}
-      >
-        {homepage ? (
+      <div className={`${classes.oContentBlock}`}>
+        {homepageBanner ? (
           <figure className={classes.mLogo}>
-            <Image
-              className={`${classes.aImage} a-responsive-image`}
-              src={logo.fields.file.url}
-              alt={`title`}
-              width={logo.fields.file.details.image.width}
-              height={logo.fields.file.details.image.height}
-              aria-hidden="true"
-              layout="responsive"
-              priority="true"
-            />
+            {logo && (
+              <Image
+                className={`${classes.aImage} a-responsive-image`}
+                src={`http:${logo?.fields?.file?.url}`}
+                alt={`title`}
+                width={logo?.fields.file.details.image.width}
+                height={logo?.fields.file.details.image.height}
+                aria-hidden="true"
+                layout="responsive"
+                priority="true"
+              />
+            )}
           </figure>
-        ) : (
-          <div className={`container`}>
-            <div className={`row`}>
-              <h1 className={`${classes.aTitle} fntH1 col-12`}>{title}</h1>
-            </div>
-          </div>
-        )}
+        ) : null}
+        <h1>{title}</h1>
+        <h4>{subtitle}</h4>
       </div>
-      <figure className={classes.introImage}>
-        {mobileView ? (
-          <Image
-            className={classes.oImageBlockMobile}
-            src={backgroundImageMobile.fields.file.url}
-            alt={`title`}
-            width={backgroundImageMobile.fields.file.details.image.width}
-            height={backgroundImageMobile.fields.file.details.image.height}
-            aria-hidden="true"
-            layout="responsive"
-            priority="true"
-          />
-        ) : (
-          <Image
-            className={classes.oImageBlock}
-            src={backgroundImage.fields.file.url}
-            alt={`title`}
-            width={backgroundImage.fields.file.details.image.width}
-            height={backgroundImage.fields.file.details.image.height}
-            aria-hidden="true"
-            layout="responsive"
-            priority="true"
-          />
-        )}
-      </figure>
+
+      {mobileView ? (
+        <>
+          {homepageBanner ? (
+            <figure
+              className={`${classes.introImage}`}
+              style={{
+                backgroundImage: `url(http:${backgroundImageMobile?.fields?.file.url})`,
+              }}
+            ></figure>
+          ) : (
+            <figure
+              className={`${classes.introImage}`}
+              style={{
+                backgroundImage: `url(${backgroundImageMobile?.url})`,
+              }}
+            ></figure>
+          )}
+        </>
+      ) : (
+        <>
+          {homepageBanner ? (
+            <figure
+              className={`${classes.introImage}`}
+              style={{
+                backgroundImage: `url(http:${backgroundImage?.fields.file.url})`,
+              }}
+            ></figure>
+          ) : (
+            <figure
+              className={`${classes.introImage}`}
+              style={{
+                backgroundImage: `url(${backgroundImage?.url})`,
+              }}
+            ></figure>
+          )}
+        </>
+      )}
     </section>
   );
 }
