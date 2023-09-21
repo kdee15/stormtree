@@ -6,12 +6,7 @@ import classes from "./Nav.module.scss";
 export default function Nav(contentModule) {
   const [isActive, setIsActive] = useState();
   const handleToggle = () => setIsActive(!isActive);
-
-  console.log("contentModule", contentModule);
-
   const { menuLinks } = contentModule.contentModule;
-
-  console.log("menuLinks", menuLinks);
 
   return (
     <nav className={classes.navMain}>

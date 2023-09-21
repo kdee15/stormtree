@@ -31,7 +31,6 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ Page, MainMenu }) {
-  console.log("Page", Page);
   const home = Page[5].fields;
   return (
     <div className="anchor" id="top">
