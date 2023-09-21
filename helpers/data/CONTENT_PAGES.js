@@ -41,3 +41,12 @@ query GetPageList
   }
 }
 `;
+
+export const PAGE_ELEMENTS = `
+query GetElements
+{
+  componentMenu (id:"39KX54gNwflHWi6CKJRlcb") {
+    title
+  }
+}
+`;

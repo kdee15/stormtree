@@ -1,10 +1,17 @@
 import { useState } from "react";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
+import Link from "next/dist/client/link";
 import classes from "./Nav.module.scss";
 
-export default function Nav() {
+export default function Nav(contentModule) {
   const [isActive, setIsActive] = useState();
   const handleToggle = () => setIsActive(!isActive);
+
+  console.log("contentModule", contentModule);
+
+  const { menuLinks } = contentModule.contentModule;
+
+  console.log("menuLinks", menuLinks);
 
   return (
     <nav className={classes.navMain}>
@@ -20,53 +27,18 @@ export default function Nav() {
           <BurgerMenu handleToggle={handleToggle} isActive={isActive} />
         </div>
         <ul className={classes.mMenu}>
-          <li className={classes.navLink}>
-            <a className={classes.aLink} href="#top" onClick={handleToggle}>
-              Home
-            </a>
-          </li>
-          <li className={classes.navLink}>
-            <a className={classes.aLink} href="#about" onClick={handleToggle}>
-              About
-            </a>
-          </li>
-          <li className={classes.navLink}>
-            <a className={classes.aLink} href="#tania" onClick={handleToggle}>
-              Tania Molteno
-            </a>
-          </li>
-          <li className={classes.navLink}>
-            <a className={classes.aLink} href="#adele" onClick={handleToggle}>
-              Adele Segers
-            </a>
-          </li>
-          <li className={classes.navLink}>
-            <a
-              className={classes.aLink}
-              href="#management"
-              onClick={handleToggle}
-            >
-              Talent Management Solutions
-            </a>
-          </li>
-          <li className={classes.navLink}>
-            <a
-              className={classes.aLink}
-              href="#consulting"
-              onClick={handleToggle}
-            >
-              Labour Consulting
-            </a>
-          </li>
-          <li className={classes.navLink}>
-            <a
-              className={classes.aLink}
-              href="#training"
-              onClick={handleToggle}
-            >
-              Training
-            </a>
-          </li>
+          {menuLinks.map((link, index) => (
+            <li className={classes.navLink} key={index}>
+              <Link onClick={handleToggle} href={link.fields.url}>
+                <a
+                  className={classes.aLink}
+                  target={`${link.fields.isExternal ? "_blank" : "_parent"}`}
+                >
+                  {link.fields.label}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
