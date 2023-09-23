@@ -100,11 +100,20 @@
     display: none;
   }
 
+  .oNavMain {
+    position: sticky;
+    bottom: 0;
+  }
+
   .mMenu {
     margin: 0 auto;
     padding: 0;
     text-align: center;
     background-color: white;
+    position: sticky;
+  }
+  .aLink {
+    margin: 15px 7px;
   }
 }
 
@@ -113,6 +122,9 @@
 // E. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++
 
 @media ($xl-up) {
+  .aLink {
+    margin: 15px;
+  }
 }
 
 // E. END +++++++++++++++++++++++++++++++++++++++++++++++

@@ -16,7 +16,7 @@ export default function Nav(contentModule) {
   const { menuLinks } = contentModule.contentModule;
 
   return (
-    <nav className={classes.navMain}>
+    <nav className={classes.oNavMain}>
       <span onClick={handleToggle} className={classes.burgerWrapper}>
         <BurgerMenu />
       </span>
@@ -51,7 +51,7 @@ export default function Nav(contentModule) {
               <li className={classes.navLink} key={index}>
                 <Link href={link.fields.url}>
                   <a
-                    className={classes.aLink}
+                    className={`${classes.aLink} fnt16b`}
                     target={`${link.fields.isExternal ? "_blank" : "_parent"}`}
                   >
                     {link.fields.label}

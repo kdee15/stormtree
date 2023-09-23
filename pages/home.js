@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import Nav from "../components/molecules/nav/Nav";
+import ComponentHeroBanner from "../components/blocks/componentHeroBanner/ComponentHeroBanner";
 const { C_SPACE_ID, C_DELIVERY_KEY } = require("../helpers/contentful-config");
 
 export async function getStaticProps(context) {
@@ -32,11 +33,63 @@ export async function getStaticProps(context) {
 
 export default function Home({ Page, MainMenu }) {
   console.log("Page", Page);
-  const home = Page[0].fields;
+  const componentHeroBanner = Page[0].fields.componentList[0].fields;
   return (
     <div className="anchor" id="top">
-      <h1>{home.title}</h1>
+      <ComponentHeroBanner contentModule={componentHeroBanner} />
       <Nav contentModule={MainMenu} />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
